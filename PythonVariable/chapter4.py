@@ -523,5 +523,17 @@ import csv
 file=open(“d:\data\emp2.csv”,’r’)
 emp_csv=csv.reader(file)
 for emp_list in emp_csv:
-    a=date.today()-datetime.datetime.strptime(emp_list[4],’%Y-%m-%d’).date()
-    print(emp_list[1], a)
+    a=datetime.datetime.strptime(emp_list[4],’%Y-%m-%d’).date()
+    print(emp_list[1], date.today()- a)
+
+#date.today().toordinal())
+
+#ex55)input명령어와 if를 이용한 문제
+#if문을 사용해서 사원번호가 7788번인 사원의 이름과 월급을 출력하시오
+import csv
+file = open("d:\data\emp2.csv",'r')
+emp_csv = csv.reader(file)
+for emp_list in emp_csv:
+    if int(emp_list[0]) == 7788:
+        print(emp_list[1],emp_list[5])
+
