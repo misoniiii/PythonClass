@@ -537,3 +537,43 @@ for emp_list in emp_csv:
     if int(emp_list[0]) == 7788:
         print(emp_list[1],emp_list[5])
 
+#ex56) 월급이 3000이상인 사원들의 이름과 월급을 출력하시오
+import csv
+file = open("d:\data\emp2.csv",'r')
+emp_csv = csv.reader(file)
+for emp_list in emp_csv:
+    if int(emp_list[5]) >= 3000:
+        print(emp_list[1],emp_list[5])
+#ex57)1981년 11월 17일에 입사한 직원 이름, 입사일 출력
+import csv
+file = open("d:\data\emp2.csv",'r')
+emp_csv = csv.reader(file)
+for emp_list in emp_csv:
+    if emp_list[4] == '1981-11-17':
+        print(emp_list[1],emp_list[4])
+#ex58)(TTT프로그램을 이해하는데 중요한 문제)
+    #81년도에 입사한 사원들의 이름과 입사일을 출력하시오
+import csv
+file = open("d:\data\emp2.csv",'r')
+emp_csv = csv.reader(file)
+for emp_list in emp_csv:
+    if int(emp_list[4][0:4]) == 1981:
+        print(emp_list[1], emp_list[4]
+
+# ex59) 아래의 리스트 변수에서 positive라는 단어는 몇개 나오는가
+word = ['winter', 'cold', 'positive', 'neagative']
+sum = 0
+for i in word:
+    if 'positive' == i:
+    sum = sum + 1
+print(sum)
+
+#ex60) 아래의 리스트 변수에서 positive 와 negative라는 단어가 몇개가 포함되어 있는지 알아내시오
+word = ['winter', 'cold', 'positive', 'negative']
+sum = 0
+for i in word:
+    if i in ['positive','negative']:
+        sum = sum + 1
+print(sum)
+
+#ex61)겨울왕국 대본에는 긍정적인 단어가 몇개나 들었는가?
