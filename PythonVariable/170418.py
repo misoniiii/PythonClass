@@ -222,3 +222,77 @@ print(type(a))
 
 b=1,2,3
 print(type(b))
+
+####
+# select * from ttt_data
+# where learning_order in (
+#                             select max(learning_order) from ttt_data
+#                             where player = 1
+#                             and c1 = 1 and c2 = 2 and c3 = 1 and c4 = 2 and c7 = 1 and c9 = 2
+#                             and c5+c6+c8 = 1
+#                             group by c5, c6, c8
+#                         )
+#     and player = 1;
+#
+# 123
+# 456
+# 789
+
+#ex81) mit_ttt를 파이썬에서 출력
+file= open("/Users/misoni/Desktop/pythondata/mit_ttt.txt",'r')
+for i in file:
+    line = i.strip("\n")
+    mit_ttt = line.split(",")
+    print(mit_ttt)
+
+#ex82) pandas 모듈을 이용해서 사원 테이블에서 최대 월급을 출력하시오
+import pandas as pd
+emp = pd.DataFrame.from_csv("/Users/misoni/Desktop/pythondata/emp_col.csv")
+print( emp['sal'].max())
+
+result = emp[['ename','sal']][emp['sal']>=3000].sort_value
+# 열 행
+print(result)
+
+
+
+
+#ex86) 부서번호가 20번인 사원들의 최대 월급을 출력하시오
+import pandas as pd
+emp = pd.DataFrame.from_csv("/Users/misoni/Desktop/pythondata/emp_col.csv")
+
+result = emp['sal'][emp['deptno']==20].max()
+
+print(result)
+
+#ex87) 직업, 직업별 토탈월급 출력
+import pandas as pd
+emp = pd.DataFrame.from_csv("/Users/misoni/Desktop/pythondata/emp_col.csv")
+
+result = emp.groupby('job')['sal'].sum()
+
+print(result)
+
+#ex88)부서번호, 부서번호 별 평균 월급을 출력
+import pandas as pd
+emp = pd.DataFrame.from_csv("/Users/misoni/Desktop/pythondata/emp_col.csv")
+
+result = emp.groupby('deptno')['sal'].mean()
+
+print(result)
+
+#ex89)아래의 결과를 pandas로 구현
+import pandas as pd
+ttt= pd.DataFrame.from_csv("/Users/misoni/Desktop/pythondata/mit_ttt2.csv")
+print(ttt)
+result1 = ttt[ ( ttt['PLAYER']==1) &
+               (ttt['C1'] == 1) &
+                (ttt['C2'] == 2) &
+                (ttt['C3'] == 1) &
+                (ttt['C4'] == 2) &
+                (ttt['C7'] == 1) &
+                (ttt['C9'] == 2) &
+                (ttt['C5']+ ttt['C6']+ ttt['C8'] == 1) ]
+result2 = result1.groupby(['C5','C6','C8'])['LEARNING_ORDER'].max()
+print(result2)
+
