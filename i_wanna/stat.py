@@ -75,7 +75,7 @@ print(sal_var)
 print(sal_std)
 
 
-#numpy
+#numpy 부서별 평균월급
 import numpy
 file = open("/Users/misoni/Desktop/pythondata/emp2.csv", "r")
 emp_csv = csv.reader(file)

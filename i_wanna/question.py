@@ -14,7 +14,7 @@
 # Command + F2: Stop
 # Shift + F6: Rename
 # Command + F8: Toggle break point
-option+shift+e
+#option+shift+e
 
 
 ##############################################
@@ -34,3 +34,23 @@ def print_someting(*num_list):
         print(i)
 
 print_someting(1,2,3,4,5) #print쓰면 none하고 같이 출력/ 함수 쓰면 그냥 나옴
+
+
+def factorial(num):                         #10
+    if num > 1:
+        return factorial(num-1) * num       #10-1=9
+    elif num == 1:
+        return 1
+
+print(factorial(5))
+
+
+def mult(a, b):
+    if b == 0:
+        return 0
+    rest = mult(a, b - 1)
+    value = a + rest
+    return value
+print("3 * 2 = ", mult(3, 2))
+
+
