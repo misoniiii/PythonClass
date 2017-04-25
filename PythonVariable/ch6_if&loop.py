@@ -168,20 +168,20 @@ print(i)
 
 
 
-문제117. 구구단 2단을 출력하시오.
+#문제117. 구구단 2단을 출력하시오.
 
 for i in range(1,10):
     print('2 x',i,'=',2*i)
 
 
-문제118. 아래의 결과를 출력하시오.
-★
-★★
-★★★
-★★★★
-.
-.
-★★★★★★★★★★
+# 문제118. 아래의 결과를 출력하시오.
+# ★
+# ★★
+# ★★★
+# ★★★★
+# .
+# .
+# ★★★★★★★★★★
 
 
 pattern ='★'
@@ -198,35 +198,30 @@ for i in range(1,11):
     print(i*star)
 
 
-참고 파이썬 튜닝??
-예제 1 : 문자열 붙이기1   (이 코드는 시간이 존나 많이 걸린다)
+# 참고 파이썬 튜닝??
+# 예제 1 : 문자열 붙이기1   (이 코드는 시간이 존나 많이 걸린다)
 s = ''
 for k in range(100000):
-       s += 'spam'           s는 100000개의 스펨을 갖게된다
+       s += 'spam'           #s는 100000개의 스펨을 갖게된다
 
-예제 1 : 문자열 붙이기2   (다른 방법...좀 낫다함)
+#예제 1 : 문자열 붙이기2   (다른 방법...좀 낫다함)
 t = []
 for k in range(100000):
      t.append('spam')
 s = ''.join(t)
 
-출처: http://200315193.tistory.com/267 [quatre의 블로그]
-
-출처: <http://200315193.tistory.com/267>
 
 
-
-
-
-문제119. 아래와 같이 출력하시오.
-★★★★★★★★★★
-
-.
-.
-★★★★
-★★★
-★★
-★
+#
+# 문제119. 아래와 같이 출력하시오.
+# ★★★★★★★★★★
+#
+# .
+# .
+# ★★★★
+# ★★★
+# ★★
+# ★
 
 
 star ='★'
@@ -238,7 +233,7 @@ for i in range(10,0,-1):
 
 
 
-문제120. 아래와 같이 출력하시오.
+# 문제120. 아래와 같이 출력하시오.
 
 
 pattern = ''
@@ -272,16 +267,16 @@ for i in range(1,11):
 
 
 
-문제121. 중첩 for loop문을 이용해서 ★로 사각형을 만드시오.
-
-가로의 숫자를 입력하세요~ 5
-세로의 숫자를 입력하세요~ 5
-
-★★★★★
-★★★★★
-★★★★★
-★★★★★
-★★★★★
+# 문제121. 중첩 for loop문을 이용해서 ★로 사각형을 만드시오.
+#
+# 가로의 숫자를 입력하세요~ 5
+# 세로의 숫자를 입력하세요~ 5
+#
+# ★★★★★
+# ★★★★★
+# ★★★★★
+# ★★★★★
+# ★★★★★
 
 width=int(input('가로의 숫자를 입력하세요'))
 height=int(input('세로의 숫자를 입력하세요'))
@@ -294,7 +289,7 @@ for i in range(height):
     pattern=''
 
 
-무성이 버전 문제121번
+# 무성이 버전 문제121번
 a=int(input('가로의 숫자를 입력하세요'))
 b=int(input('세로의 숫자를 입력하세요'))
 
@@ -304,19 +299,19 @@ result = ''.join('★' for i in range(a))
 print(result)
 
 
-설명:
-('★' for i in range(5))   #for loop문을 5번 돌려서 ★를 5개로 만들어라
-join    ★5개를 모아주는 메소드
-''.    result변수를 ''로
-
-
-
-
-
-문제122. 구구단을 가로로 출력하시오.
-2 x 1=2   3 x 1 =3     ...........9 x 1=9
-.
-.
+# 설명:
+# ('★' for i in range(5))   #for loop문을 5번 돌려서 ★를 5개로 만들어라
+# join    ★5개를 모아주는 메소드
+# ''.    result변수를 ''로
+#
+#
+#
+#
+#
+# 문제122. 구구단을 가로로 출력하시오.
+# 2 x 1=2   3 x 1 =3     ...........9 x 1=9
+# .
+# .
 
 for i in range(1,10):
     ans=''
@@ -324,17 +319,16 @@ for i in range(1,10):
         ans = ans + str(j) +'X'+ str(i) + '=' + str(j*i)+' '
     print(ans)
 
-밑은 정렬 예쁘게
+# 밑은 정렬 예쁘게
 
 for i in range(1,10):
     ans=''
     for j in range(2,10):
         ans += (str(j) +'X'+ str(i) + '=' + str(j*i)).ljust(8)
-    print(ans)                                                           ↑
-                                                                               정렬 lpad(ans,10,' ')와 같음
+    print(ans)
+                                            # 정렬 lpad(ans,10,' ')와 같
 
-
-문제123. for loop문을 이용해서 power함수를 구현하시오.
+#문제123. for loop문을 이용해서 power함수를 구현하시오.
 
 밑수를 입력하세요.  2
 지수를 입력하세요. 3
@@ -352,7 +346,7 @@ print(a,'의',n,'승은',result,'입니다')
 
 
 
-■ 숫자, 문자, 공백이 스크립트 안에 얼마나 포함되었는지 확인하는 방법
+#■ 숫자, 문자, 공백이 스크립트 안에 얼마나 포함되었는지 확인하는 방법
 s = 'some string'
 
 numbers =sum(i.isdigit() for i in s)
@@ -364,9 +358,9 @@ print(space)
 
 
 
-문제124. 겨울왕국 대본에는 숫자가 몇 개나 있나?
+#문제124. 겨울왕국 대본에는 숫자가 몇 개나 있나?
 
-step1)  먼저 대본의 줄마다 뽑아서 출력해봄
+#step1)  먼저 대본의 줄마다 뽑아서 출력해봄
 winter = open("D:\data\winter.txt","r")
 lines = winter.readlines()
 total = 0
@@ -382,7 +376,7 @@ for i in lines:
 print(total)
 
 
-문제125. 겨울왕국에 특수문자가 몇 개나 포함되어져 있는지 확인하시오.
+#문제125. 겨울왕국에 특수문자가 몇 개나 포함되어져 있는지 확인하시오.
 
 winter = open("D:\data\winter.txt","r")
 lines = winter.readlines()
@@ -396,27 +390,27 @@ print(total)
 
 
 
-■ while loop문
-
-문법: while 조건 :
-      실행문
-
-예제:   print('몇 번 반복할까요?')
- limit = int(input('반복할 횟수를 입력하세요.'))
-count = 0
-
-while count < limit:
-count += 1
-print('{0}회 반복'.format(count))
-
-
-문제126. 숫자를 물어보게 하고 숫자를 입력하면 해당 숫자만큼 아래와 같은 그림이 그려지게 하시오.   while loop로
-
-숫자를 입력하세요. 4
-            ★
-          ★★
-         ★★★
-       ★★★★
+#■ while loop문
+#
+# 문법: while 조건 :
+#       실행문
+#
+# 예제:   print('몇 번 반복할까요?')
+#  limit = int(input('반복할 횟수를 입력하세요.'))
+# count = 0
+#
+# while count < limit:
+# count += 1
+# print('{0}회 반복'.format(count))
+#
+#
+# 문제126. 숫자를 물어보게 하고 숫자를 입력하면 해당 숫자만큼 아래와 같은 그림이 그려지게 하시오.   while loop로
+#
+# 숫자를 입력하세요. 4
+#             ★
+#           ★★
+#          ★★★
+#        ★★★★
 
 num = int(input('숫자를 입력하세요'))
 cnt=1
@@ -426,10 +420,10 @@ while cnt<=num:
 
 
 
-문제127. 퍅토리얼을 while loop문으로 구현하시오.
-
-팩토리얼 숫자를 입력하세요~  5
-120 입니다.
+#문제127. 퍅토리얼을 while loop문으로 구현하시오.
+#
+# 팩토리얼 숫자를 입력하세요~  5
+# 120 입니다.
 
 n = int(input('팩토리얼 숫자를 입력하세요.'))
 result = 1
@@ -440,10 +434,10 @@ while n>0:
 print(result,'입니다.')
 
 
-문제128. log함수를 파이썬으로 구현하시오.
-
-밑수를 입력하시오.
-지수를 입력하시오.
+# 문제128. log함수를 파이썬으로 구현하시오.
+#
+# 밑수를 입력하시오.
+# 지수를 입력하시오.
 
 
 a=int(input('밑수를 입력하시오.'))
@@ -458,11 +452,11 @@ print('로그값은',n,'입니다.')
 
 
 
-문제129. (공채에서 가장 많이 나오는 알고리즘 문제) 두 수를 입력받아서 최대공약수를 구하시오.  (while loop문 + 유클리드 호제법)
-
-첫번째 수를 입력하세요. 24
-두번째 수를 입력하세요. 18
-6 입니다.
+# 문제129. (공채에서 가장 많이 나오는 알고리즘 문제) 두 수를 입력받아서 최대공약수를 구하시오.  (while loop문 + 유클리드 호제법)
+#
+# 첫번째 수를 입력하세요. 24
+# 두번째 수를 입력하세요. 18
+# 6 입니다.
 
 a = int(input('첫번째 수를 입력하세요.'))
 b = int(input('두번째 수를 입력하세요.'))
@@ -480,8 +474,8 @@ while a%b!=0:
 print(b,'입니다.')
 
 
-문제130(마지막 문제)  최대공약수를 알고 싶은 두 개의 숫자를 입력하세요. ~ 24 18
-6입니다.
+# 문제130(마지막 문제)  최대공약수를 알고 싶은 두 개의 숫자를 입력하세요. ~ 24 18
+# 6입니다.
 
 numbers = input('최대공약수를 알고 싶은 두 수를 입력하세요.')
 
@@ -504,32 +498,32 @@ print(b,'입니다.')
 
 
 
-■ mit 공대 머신러닝 코드를 이해하기 위한 문법?
-format함수
-for loop문
-함수 생성한느 방법
-자료형 - 리스트, 튜플, 딕셔너리
-if문
-몬테카를로 알고리즘
-탐욕 알고리즘
-수학 공식
-self.values[self.prevstate] += self.alpha * (nextval - self.prevscore)
-
-
-
-■ 6.4 continue와 break
-
-- continue문
- "반복문이 실행되는 동안 특정 코드블럭은 실행하지 않고 다른 코드 블럭만 실행되게 할 때 사용하는 문법"
-
-예제 설명:
+# ■ mit 공대 머신러닝 코드를 이해하기 위한 문법?
+# format함수
+# for loop문
+# 함수 생성한느 방법
+# 자료형 - 리스트, 튜플, 딕셔너리
+# if문
+# 몬테카를로 알고리즘
+# 탐욕 알고리즘
+# 수학 공식
+# self.values[self.prevstate] += self.alpha * (nextval - self.prevscore)
+#
+#
+#
+# ■ 6.4 continue와 break
+#
+# - continue문
+#  "반복문이 실행되는 동안 특정 코드블럭은 실행하지 않고 다른 코드 블럭만 실행되게 할 때 사용하는 문법"
+#
+# 예제 설명:
 for i in range(10):
     if i%2==1:
         continue;
     print(i)                  #짝수만 출력
-설명: i%2==1이면 continue다음의 반복문은 실행시키지 말고 반복문 처음으로 돌아가라)
+# 설명: i%2==1이면 continue다음의 반복문은 실행시키지 말고 반복문 처음으로 돌아가라)
 
-문제131.  숫자를 1부터 10까지 출력하는데 중간에 5는 나오지 않게 하시오.
+# 문제131.  숫자를 1부터 10까지 출력하는데 중간에 5는 나오지 않게 하시오.
 
 for i in range(1,11):
     if i==5:
@@ -537,10 +531,11 @@ for i in range(1,11):
     print(i)
 
 
-■ break문
-"루프를 중단시키는 역할을 하는 문법"
+# ■ break문
+# "루프를 중단시키는 역할을 하는 문법"
 
-예제 :    i = 0
+# 예제 :
+i = 0
     while(True) :       #무한 루프 돌리겠다
 i = i+1
 if i==1000:
@@ -550,7 +545,7 @@ break
 
 
 
-예제2:
+# 예제2:
 i = 0
 while (True):
     i = i+1
@@ -563,15 +558,15 @@ print(i)
 
 
 
-문제132. 함수를 생성하는데 아래와 같이 숫자를 넣어서 실행하면 해당 숫자만큼 숫자가 세로로 출력되게 하시오.
-
-prinf(break_fun(10))    #10이 loop를 중단시킬 숫자
-1
-2
-3
-.
-.
-10
+# # 문제132. 함수를 생성하는데 아래와 같이 숫자를 넣어서 실행하면 해당 숫자만큼 숫자가 세로로 출력되게 하시오.
+#
+# prinf(break_fun(10))    #10이 loop를 중단시킬 숫자
+# 1
+# 2
+# 3
+# .
+# .
+# 10
 
 
 def break_fun(var):
@@ -584,9 +579,9 @@ def break_fun(var):
 print(break_fun(10))
 
 
-문제133. 위의 함수를 수정해서 결과가 아래와 같이 가로로 출력되게 하시오.
-print(break_fun(10))
-1 2 3 4 5 6 7 8 9 10
+# 문제133. 위의 함수를 수정해서 결과가 아래와 같이 가로로 출력되게 하시오.
+# print(break_fun(10))
+# 1 2 3 4 5 6 7 8 9 10
 
 def break_fun(var):
     result = ''
@@ -600,24 +595,24 @@ print(break_fun(10))
 
 
 
-6장을 정리하는 문제들
-
-■ 6장에서 배운 내용 if문과 loop문을 정리하는 문제
-
- * pandas를 이용해서 1. 판다스 기본문법
-                    2. 판다스의 연산자
-         3. 판다스 이용해서 서브쿼리
-         4. 판다스 이용해서 조인
-
-* pandas를 이용하지 않고 조인
-for loop문을 중첩해서 문제를 해결
-딕셔너리 데이터 타입을 이해(MIT 코드에서도 중요하게 쓰인다)
-
-
-문제134. 아래와 같이 딕셔너리 형태의 데이터를 만들고 출력하시오.
-
-* 파이썬 데이터 구조 3가지 :      1. 리스트    2. 튜플    3. 딕셔너리(키와 값으로 구성된
-자료형)                                                   [ 와 ]           ( 와 )                      { 와 }
+# 6장을 정리하는 문제들
+#
+# ■ 6장에서 배운 내용 if문과 loop문을 정리하는 문제
+#
+#  * pandas를 이용해서 1. 판다스 기본문법
+#                     2. 판다스의 연산자
+#          3. 판다스 이용해서 서브쿼리
+#          4. 판다스 이용해서 조인
+#
+# * pandas를 이용하지 않고 조인
+# for loop문을 중첩해서 문제를 해결
+# 딕셔너리 데이터 타입을 이해(MIT 코드에서도 중요하게 쓰인다)
+#
+#
+# 문제134. 아래와 같이 딕셔너리 형태의 데이터를 만들고 출력하시오.
+#
+# * 파이썬 데이터 구조 3가지 :      1. 리스트    2. 튜플    3. 딕셔너리(키와 값으로 구성된
+# 자료형)                                                   [ 와 ]           ( 와 )                      { 와 }
 
 emp_dic={'mgr':'7788','sal':'1100','deptno':'20','comm':'0','job':'CLERK','hiredate':'1983-01-15',
 'empno':'7876','ename':'ADAMS'}
@@ -629,7 +624,7 @@ emp_dic['mgr']
 
 
 
-문제135. 6장에서 배운 for loop를 이용해서 emp2.csv를 읽어와서 emp_dic라는 딕셔너리 데이터 유형을 만드시오.
+# 문제135. 6장에서 배운 for loop를 이용해서 emp2.csv를 읽어와서 emp_dic라는 딕셔너리 데이터 유형을 만드시오.
 
 import csv
 
@@ -645,13 +640,13 @@ for emp_list in emp_csv:
 print(emp)
 
 # 딕셔너리 안에는 append가 없어서 바로 딕셔너리에 for loop로 한꺼번에 넣을 수 없음.
-그래서 위와 같이 리스트 변수 안에 딕셔너리 변수를 담아준 것임
+# 그래서 위와 같이 리스트 변수 안에 딕셔너리 변수를 담아준 것임
 
 
 
-문제136. emp 딕셔너리 변수에서 이름만 출력하시오.
-그동안에는 emp_list변수에서 ename에 해당하는 부분을 출력해왔다면 지금은
-emp_dic변수에서 ename에 해당하는 부분을 출력하는 것이다.
+# 문제136. emp 딕셔너리 변수에서 이름만 출력하시오.
+# 그동안에는 emp_list변수에서 ename에 해당하는 부분을 출력해왔다면 지금은
+# emp_dic변수에서 ename에 해당하는 부분을 출력하는 것이다.
 
 import csv
 
@@ -666,10 +661,10 @@ for emp_list in emp_csv:
 for emp_dic in emp:
     print(emp_dic['ename'])
 
-KING BLAKE CLARK JONES MARTIN ALLEN TURNER JAMES WARD FORD SMITH SCOTT ADAMS MILLER
+# KING BLAKE CLARK JONES MARTIN ALLEN TURNER JAMES WARD FORD SMITH SCOTT ADAMS MILLER
 
 
-문제137. 이름, 월급, 직업을 출력하시오.
+# 문제137. 이름, 월급, 직업을 출력하시오.
 import csv
 
 file = open("D:\data\emp2.csv",'r')
@@ -685,8 +680,8 @@ for emp_dic in emp:
     print(emp_dic['ename'],emp_dic['sal'],emp_dic['job'])
 
 
-문제138. dept.csv를 읽어서 딕셔너리 데이터 구조로 저장하고 아래와 같이
-수행하면 deptno, dname, loc가 출력되게 하시오.
+# 문제138. dept.csv를 읽어서 딕셔너리 데이터 구조로 저장하고 아래와 같이
+# 수행하면 deptno, dname, loc가 출력되게 하시오.
 print( dept_dic['deptno'], dept_dic['dname'], dept_dic['loc'] )
 
 import csv
@@ -703,8 +698,8 @@ for dept_dic in dept:
 
 
 
-문제139. emp.csv와 dept.csv를 각각 읽어와서 emp_dic, dept_dic 딕셔너리 자료형으로
-만드는 스크립트를 하나로 합치시오.
+# 문제139. emp.csv와 dept.csv를 각각 읽어와서 emp_dic, dept_dic 딕셔너리 자료형으로
+# 만드는 스크립트를 하나로 합치시오.
 
 import csv
 
@@ -722,12 +717,12 @@ for emp_list in emp_csv:
 for dept_list in dept_csv:
     dept.append({'deptno':dept_list[1],'dname':dept_list[2],'loc':dept_list[3]})
 
-emp
-dept
-
-
-문제140. emp와 dept라는 딕셔너리 자료구조를 만드는 스크립트와 중첩 for loop문을
-이용해서 emp와 dept를 join 시켜서 ename과 loc를 출력하시오.
+# emp
+# dept
+#
+#
+# 문제140. emp와 dept라는 딕셔너리 자료구조를 만드는 스크립트와 중첩 for loop문을
+# 이용해서 emp와 dept를 join 시켜서 ename과 loc를 출력하시오.
 
 import csv
 
@@ -753,7 +748,7 @@ for e in emp:
 
 
 
-문제141. 부서위치가 DALLAS인 사원들의 이름과 부서위치를 출력하시오.
+# 문제141. 부서위치가 DALLAS인 사원들의 이름과 부서위치를 출력하시오.
 
 import csv
 
@@ -777,11 +772,10 @@ for e in emp:
             print(e['ename'],d['loc'])
 
 
-문제142. 위의 스크립트를 이용해서 join함수를 생성하시오.
+# 문제142. 위의 스크립트를 이용해서 join함수를 생성하시오.
 
-print(join(emp, 'ename', dept,'loc',deptno))
-                                                                 ↑
-                                                    얘로 조인해라
+# print(join(emp, 'ename', dept,'loc',deptno))
+
 
 def join(table1,col1,table2,col2,joincol):
     for i in table1:
@@ -793,7 +787,7 @@ def join(table1,col1,table2,col2,joincol):
 print(join(emp,'ename',dept,'loc','deptno'))
 
 
-문제143. pandas를 이용해서 이름,부서위치를 출력하시오.
+# 문제143. pandas를 이용해서 이름,부서위치를 출력하시오.
 
 import pandas as pd
 
@@ -803,10 +797,10 @@ dept = pd.read_csv("D:\data\dept.csv")
 result = pd.merge(emp,dept,on='deptno')
 print(result[['ename','loc']])
 
-1 2 3 4 5 6 7 8 9 10 11 12 13 ename KING CLARK MILLER BLAKE MARTIN ALLEN TURNER JAMES WARD JONES FORD SMITH SCOTT ADAMS NEW NEW NEW loc YORK YORK YORK CHICAGO CHICAGO CHICAGO CHICAGO CHICAGO CHICAGO DALLAS DALLAS DALLAS DALLAS DALLAS
-
-문제144. 부서위치가 DALLAS인 사원들의 이름, 부서위치를 출력하시오.
-pandas로 수행한다.
+# 1 2 3 4 5 6 7 8 9 10 11 12 13 ename KING CLARK MILLER BLAKE MARTIN ALLEN TURNER JAMES WARD JONES FORD SMITH SCOTT ADAMS NEW NEW NEW loc YORK YORK YORK CHICAGO CHICAGO CHICAGO CHICAGO CHICAGO CHICAGO DALLAS DALLAS DALLAS DALLAS DALLAS
+#
+# 문제144. 부서위치가 DALLAS인 사원들의 이름, 부서위치를 출력하시오.
+# pandas로 수행한다.
 
 import pandas as pd
 
@@ -816,10 +810,10 @@ dept=pd.read_csv("D:\data\dept.csv")
 result = pd.merge(emp,dept,on='deptno')
 print(result[['ename','loc']][result['loc']=='DALLAS'])
 
-9 10 11 12 13 ename JONES FORD SMITH SCOTT ADAMS loc DALLAS DALLAS DALLAS DALLAS DALLAS
-
-
-문제145. 이름, 부서위치를 출력하는데 아래와 같이 outer join을 구현하시오.
+# 9 10 11 12 13 ename JONES FORD SMITH SCOTT ADAMS loc DALLAS DALLAS DALLAS DALLAS DALLAS
+#
+#
+# 문제145. 이름, 부서위치를 출력하는데 아래와 같이 outer join을 구현하시오.
 
 select e.ename, d.loc
 from emp e, dept d
