@@ -771,4 +771,3 @@ for i in range(len(input_list)) :
         if dic[j][1]==i :
             result = result + dic[j][0] + ' '
 print(result)
- 

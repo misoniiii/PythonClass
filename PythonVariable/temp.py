@@ -1,5 +1,1 @@
-from PythonVariable.ch8_module import *
-
-print(plus(1, 2))
-
-
+#자유 메모장

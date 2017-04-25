@@ -1,3 +1,4 @@
+###용현ver
 def returnGCD(num_list):
     num_list = list(map(lambda x: int(x), num_list))
     max_num = max(num_list)
