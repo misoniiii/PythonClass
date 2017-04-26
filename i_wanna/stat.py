@@ -76,15 +76,16 @@ print(sal_std)
 
 
 #numpy 부서별 평균월급
-import numpy
-file = open("/Users/misoni/Desktop/pythondata/emp2.csv", "r")
-emp_csv = csv.reader(file)
+import numpy, csv
+# file = open("/Users/misoni/Desktop/pythondata/emp2.csv", "r")오픈은 한번만 해줌
+# emp_csv = csv.reader(file)
 
 deptno = ['10','20','30']
 for i in deptno:
     sal_list=[]
-    for j in emp_csv:
+    file = open("/Users/misoni/Desktop/pythondata/emp2.csv", "r")
+    for j in csv.reader(file):
         if j[-1] == i:
-            sal_list.append(int(j[5]))   #루프가 한번만 돌아ㅠㅠ
+            sal_list.append(int(j[5]))
     print(i, round(numpy.mean(sal_list)))
-
+    file.close()
