@@ -1,3 +1,40 @@
+######################################################################
+######################   7.1 함수 생성
+######################################################################
+# def 함수이름(매개변수):
+#     실행문
+#     결과
+
+#ex
+def my_abs(arg):
+    if (arg < 0 ):
+        result = arg * -1
+    else:
+        result = arg
+    return result
+
+print(my_abs(-5))
+
+#ex146) 아래와 같이 이름을 입력해서 함수를 실행하면 해당사원의 부서위치가 출력되게 하시오
+#print( find_loc('SMITH'))
+#dallas
+import pandas as pd
+def find_loc(val):
+    emp = pd.read_csv("/Users/misoni/Desktop/pythondata/emp_col.csv")
+    dept = pd.read_csv("/Users/misoni/Desktop/pythondata/dept.csv")
+    result = pd.merge(emp,dept,on='deptno')
+    result2 = result[['loc']][result['ename'] == val]
+    return result2
+
+print(find_loc('SMITH'))
+
+#ex147) 미분계수를 구하는 함수를 생성하는데 x가 -2일때의 기울기(미분계수)를 구하시오
+#2x^2+1
+def diff(x):
+    h = 0.00001
+    return 2*(pow((x+h),2)-pow((x-h),2))/(2*h)
+
+print(diff(-2))
 ###############################7.2 기본값 매개변수와 키워드 매개변수
 def print_string(text,count=1): #디폴트값을 원할때는 ' = 값' 써주면 됨
     for i in range(count):
@@ -34,7 +71,29 @@ merge_string('아버지가','방에','들어가신다')
 # 1. 가변 매개변수
 # 2. 리스트 변수 내의 요소들을 뽑아낼 때-->mit코드
 
-###############################7.4 매개변수로 함수를 사용하는 경우
+######################################################################
+######################  7.4 매개변수로 함수를 사용하는 경우
+######################################################################
+
+def numerical_diff(f,x):
+    h = 1e-4
+    return (f(x+h) - f(x-h)) / 2*h
+
+def function_1(x): #2x^2 +1 함수 생성
+    return 2*pow(x,2)+1
+
+print ( numerical_diff( function_1, -2 ) ) # 이해가 안가영 function_1(x)에 x에 뭘 넣어줘야하지 않나
+
+#ex148) 함수 f(x) = x^2-x+5 함수의 x가 -2일때 미분계수를 구하시오
+def numerical_diff(f,x):
+    h = 1e-4
+    return (f(x+h) - f(x-h)) / 2*h
+
+def function_1(x): #2x^2 +1 함수 생성
+    return pow(x,2)-x+5
+
+print ( numerical_diff( function_1, -2 ) )
+
 #함수 종료의미로 retrun을 사용하는 경우
 def stop_func(num):
     for i in range(1,num+1):

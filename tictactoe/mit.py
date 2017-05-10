@@ -1,3 +1,4 @@
+##############전문코드
 import random
 from copy import copy, deepcopy
 
@@ -217,11 +218,11 @@ def play(agent1, agent2):
             return winner
     return winner
 
-if __name__ == "__main__":
+if __name__ == "__main__":       #다른모듈에서 불러올 때 이 부분을 시행하지 않겠다 ##################무한루프 수정(main)
     p1 = Agent(1, lossval = -1)
     p2 = Agent(2, lossval = -1)
 
-    for i in range(100000):
+    for i in range(10000):
         if i % 10 == 0:
             print ('Game: {0}'.format(i))
 
