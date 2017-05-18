@@ -98,7 +98,7 @@ class Computer(object):
         for t in ttt_list:
             try:
                 self.values[((int(t[0]) ,int(t[1]) ,int(t[2])),(int(t[3]) ,int(t[4]) ,int(t[5])) ,(int(t[6]) ,int(t[7])
-                             ,int(t[8])))] = float(t[10])
+                             ,int(t[8])))] = float(t[10]) #키 = 값
             except ValueError:    # {((0, 2, 1), (2, 2, 0), (1, 1, 0)): -0.999999,..
                 continue
 
@@ -130,7 +130,7 @@ class Computer(object):
                         maxmove = (i, j)
                         #print(maxmove)   # 남아있는 수중에 가장 가장치가 큰 자리 (2,0)
                     if self.verbose:  #
-                        cells.append('{0:.3f}'.format(val).center(6))
+                        cells.append('{0:.3f}'.format(val).center(6)) #판에 가중치 출력
                 elif self.verbose:
                     cells.append(NAMES[state[i][j]].center(6))
         if self.verbose:
@@ -151,11 +151,7 @@ class Computer(object):
         # ((2, 0, 0), (0, 1, 0), (0, 0, 0))
         # ((0, 2, 0), (0, 1, 0), (0, 0, 0))
         # ((0, 0, 2), (0, 1, 0), (0, 0, 0))
-        # ((0, 0, 0), (2, 1, 0), (0, 0, 0))
-        # ((0, 0, 0), (0, 1, 2), (0, 0, 0))
-        # ((0, 0, 0), (0, 1, 0), (2, 0, 0))
-        # ((0, 0, 0), (0, 1, 0), (0, 2, 0))
-        # ((0, 0, 0), (0, 1, 0), (0, 0, 2))
+         #           ...
         if not key in self.values: # 위의  key 수들이 csv 에서 읽어온 수들중에 없다면
             self.add(key)  # values 에 없으며 add 함수로 추가
         #print (self.values) # {((0, 2, 1), (2, 2, 0), (1, 1, 0)): -0.999999, ...

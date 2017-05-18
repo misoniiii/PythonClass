@@ -151,33 +151,33 @@ class Agent(object):
             print(s)
 
 
-class Human(object):
-    def __init__(self, player):
-        self.player = player
-
-    def action(self, state):
-        printboard(state)
-        action = None
-        while action not in range(1, 10):
-            action = int(input('Your move? '))
-        switch_map = {
-            1: (0, 0),
-            2: (0, 1),
-            3: (0, 2),
-            4: (1, 0),
-            5: (1, 1),
-            6: (1, 2),
-            7: (2, 0),
-            8: (2, 1),
-            9: (2, 2)
-        }
-        return switch_map[action]
-
-    def episode_over(self, winner):
-        if winner == DRAW:
-            print('Game over! It was a draw.')
-        else:
-            print('Game over! Winner: Player {0}'.format(winner))
+# class Human(object):
+#     def __init__(self, player):
+#         self.player = player
+#
+#     def action(self, state):
+#         printboard(state)
+#         action = None
+#         while action not in range(1, 10):
+#             action = int(input('Your move? '))
+#         switch_map = {
+#             1: (0, 0),
+#             2: (0, 1),
+#             3: (0, 2),
+#             4: (1, 0),
+#             5: (1, 1),
+#             6: (1, 2),
+#             7: (2, 0),
+#             8: (2, 1),
+#             9: (2, 2)
+#         }
+#         return switch_map[action]
+#
+#     def episode_over(self, winner):
+#         if winner == DRAW:
+#             print('Game over! It was a draw.')
+#         else:
+#             print('Game over! Winner: Player {0}'.format(winner))
 
 
 def play(agent1, agent2):
@@ -205,10 +205,10 @@ if __name__ == "__main__":
         winner = play(p1, p2)
         p1.episode_over(winner)
         p2.episode_over(winner)
-
-    while True:
-        p2.verbose = True
-        p1 = Human(1)
-        winner = play(p1, p2)
-        p1.episode_over(winner)
-        p2.episode_over(winner)
+    #
+    # while True:
+    #     p2.verbose = True
+    #     p1 = Human(1)
+    #     winner = play(p1, p2)
+    #     p1.episode_over(winner)
+    #     p2.episode_over(winner)
